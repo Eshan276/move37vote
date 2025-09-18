@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
   try {
     const vote = await castVote(userId, pollId, optionId);
 
-    // Broadcast updated results
+
     req.io
       .to(`poll-${pollId}`)
       .emit("voteUpdate", await getVotesForPoll(pollId));

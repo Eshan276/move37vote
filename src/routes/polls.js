@@ -4,7 +4,7 @@ import { PrismaClient } from "@prisma/client";
 const router = express.Router();
 const prisma = new PrismaClient();
 
-// GET all polls
+
 router.get("/", async (req, res) => {
   try {
     const polls = await prisma.poll.findMany({
@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// ✅ GET single poll by ID (with options + vote counts)
+
 router.get("/:id", async (req, res) => {
   const pollId = parseInt(req.params.id);
 
@@ -45,7 +45,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// POST create poll
+
 router.post("/", async (req, res) => {
   const { question, options, creatorId } = req.body;
 

@@ -172,6 +172,14 @@ socket.emit('leavePoll', 1);
 socket.disconnect();
 ```
 
+### **Testing Real-time Updates**
+
+For quick testing of the WebSocket functionality, run the test client:
+
+```bash
+node testSocket.js
+```
+
 ---
 
 ## **Notes & Improvements**
